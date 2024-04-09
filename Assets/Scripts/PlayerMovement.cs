@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController rb;
-    public MeshRenderer playerModel;
+    public GameObject playerModel;
+    public Animator animator;
     public float mvmntVelocity;
     public float speed = 6f;
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +28,17 @@ public class PlayerMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - 90;
+            float targetAngle = Mathf.Atan2(direction.z, -direction.x) * Mathf.Rad2Deg - 90;
             float angle = Mathf.SmoothDampAngle(playerModel.transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             playerModel.transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            animator.SetBool("isWalking", true);
 
             rb.Move(direction * speed * Time.deltaTime);
+
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
         }
     }
 }

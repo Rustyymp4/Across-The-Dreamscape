@@ -1,4 +1,0 @@
-repository "Across The Dreamscape@Groupe_Celeste@cloud"
-  path "/"
-    br "/main"
-    co "/main"
