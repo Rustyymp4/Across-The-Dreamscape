@@ -34,7 +34,6 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("isWalking", true);
 
             rb.Move(direction * speed * Time.deltaTime);
-
         }
         else
         {
