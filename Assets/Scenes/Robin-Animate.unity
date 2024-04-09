@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 57616226}
   playerModel: {fileID: 188011923}
+  animator: {fileID: 0}
   mvmntVelocity: 0.5
   speed: 6
   turnSmoothTime: 0.1
@@ -3233,6 +3234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 57616226}
   playerModel: {fileID: 1431628850}
+  animator: {fileID: 1431628851}
   mvmntVelocity: 0.5
   speed: 6
   turnSmoothTime: 0.1
