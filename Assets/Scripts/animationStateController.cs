@@ -15,7 +15,7 @@ public class animationStateController : MonoBehaviour
     void Update()
     {
         bool isWalking = animator.GetBool("isWalking");
-        bool movePressed = Input.GetKey("z");
+        bool movePressed = Input.GetKey(KeyCode.Z);
         if (!isWalking && movePressed)
         {
             animator.SetBool("isWalking", true);
