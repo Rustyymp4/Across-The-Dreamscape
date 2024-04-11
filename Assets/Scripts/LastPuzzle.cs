@@ -40,6 +40,7 @@ public class LastEnigma : MonoBehaviour
         doorOpening = false;
     }
 
+
     public void activateRotation()
     {
         if (!frogRotating)
