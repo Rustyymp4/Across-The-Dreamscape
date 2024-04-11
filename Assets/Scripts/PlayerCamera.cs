@@ -17,7 +17,10 @@ public class Playercamera : MonoBehaviour
     public GameObject DefaultCamera;
     public GameObject AimCamera;
 
-    TileInteract colliderHit;
+    TileInteract tileHit;
+    LastEnigma statueHit;
+
+    public LayerMask layerAim;
 
     RaycastHit hit;
 
@@ -61,37 +64,37 @@ public class Playercamera : MonoBehaviour
         }
 
         SwitchCam();
-    }
 
-    private void FixedUpdate()
-    {
         Debug.DrawRay(AimCamera.transform.position, DefaultCamera.transform.rotation * transform.forward * 10, Color.green);
 
         if (currentStyle == CameraStyle.Aim)
         {
-            if (Physics.Raycast(AimCamera.transform.position, DefaultCamera.transform.rotation * transform.forward, out hit, 10, 3))
+            Physics.Raycast(AimCamera.transform.position, DefaultCamera.transform.rotation * transform.forward, out hit, 10, layerAim);
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject != null)
                 {
-                    colliderHit = hit.collider.GetComponent<TileInteract>();
-                    Debug.Log(colliderHit);
-                    if (colliderHit != null)
+                    string hitTag = hit.collider.gameObject.tag;
+                    if (hitTag == "Tile")
                     {
-                        Debug.Log("PEWPEW");
-                        colliderHit.Interact();
+                        tileHit = hit.collider.GetComponent<TileInteract>();
+                        if (tileHit != null)
+                        {
+                            tileHit.Interact();
+                        }
+                    }
+                    else if (hitTag == "Statue")
+                    {
+                        statueHit = hit.collider.GetComponent<LastEnigma>();
+                        if (statueHit != null)
+                        {
+                            statueHit.activateRotation();
+                        }
                     }
                 }
-
             }
-
         }
-        /*
-        if (currentStyle == CameraStyle.Basic)
-        {
-            
-        }
-        */
     }
+
 
     private void SwitchCam()
     {

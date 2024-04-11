@@ -10,7 +10,8 @@ public class LastEnigma : MonoBehaviour
     public Vector3 correctRotation;
     public bool doorOpening = false;
     public bool doorIsOpen = false;
-    public bool frogRotating = false; 
+    public bool frogRotating = false;
+    public Transform[] frogStatues;
 
     IEnumerator RotateFrog(Vector3 byAngles, float inTime)
     {
@@ -39,26 +40,22 @@ public class LastEnigma : MonoBehaviour
         doorOpening = false;
     }
 
-    void Update()
+    public void activateRotation()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-        { 
-            if (!frogRotating)
-            {
-                frogRotating = true;
-                StartCoroutine(RotateFrog(Vector3.up * 90, 0.8f));
-            }
+        if (!frogRotating)
+        {
+            frogRotating = true;
+            StartCoroutine(RotateFrog(Vector3.up * 90, 0.8f));
         }
+    }
 
-        /*Debug.Log(frog.eulerAngles.y);
-        Debug.Log(correctRotation.y + 1);*/
-
-        if (frog.eulerAngles.y < correctRotation.y + 1 && frog.eulerAngles.y > correctRotation.y - 1 && doorIsOpen == false)
+    public void Update()
+    {
+        if (!doorIsOpen && frogStatues[0].eulerAngles.y < correctRotation.y + 1 && frogStatues[0].eulerAngles.y > correctRotation.y - 1 && frogStatues[1].eulerAngles.y < correctRotation.y + 1 && frogStatues[1].eulerAngles.y > correctRotation.y - 1 && frogStatues[2].eulerAngles.y < correctRotation.y + 1 && frogStatues[2].eulerAngles.y > correctRotation.y - 1 && frogStatues[3].eulerAngles.y < correctRotation.y + 1 && frogStatues[3].eulerAngles.y > correctRotation.y - 1 && frogStatues[4].eulerAngles.y < correctRotation.y + 1 && frogStatues[4].eulerAngles.y > correctRotation.y - 1)
         {
             doorOpening = true;
             StartCoroutine(OpenDoor(Vector3.up * 90, 0.8f));
             doorIsOpen = true;
-            //StopCoroutine(OpenDoor(Vector3.up * 90, 0.8f));
         }
     }
 }
