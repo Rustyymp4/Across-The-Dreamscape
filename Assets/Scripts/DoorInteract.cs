@@ -14,9 +14,10 @@ public class DoorInteract : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.F) && )
+        if (Input.GetKey(KeyCode.F))
         {
-            SceneManager.LoadScene("First-Puzzle");
-        }*/
+            transform.Rotate(0, 90, 0);
+            /*SceneManager.LoadScene("First-Puzzle");*/
+        }
     }
 }
