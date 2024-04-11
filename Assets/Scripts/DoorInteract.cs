@@ -8,7 +8,8 @@ public class DoorInteract : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] puzzlePiece = new GameObject[3];
+        //puzzlePiece = GameObject.
     }
 
     // Update is called once per frame
@@ -19,5 +20,6 @@ public class DoorInteract : MonoBehaviour
             transform.Rotate(0, 90, 0);
             /*SceneManager.LoadScene("First-Puzzle");*/
         }
+
     }
 }
