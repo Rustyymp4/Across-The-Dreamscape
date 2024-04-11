@@ -4,33 +4,56 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public CharacterController rb;
-    public MeshRenderer playerModel;
-    public float mvmntVelocity;
-    public float speed = 6f;
-    public float turnSmoothTime = 0.1f;
-    float turnSmoothVelocity;
+    [Header("Movement")]
+    public float moveSpeed;
 
-    // Start is called before the first frame update
-    void Start()
+    public Transform orientation;
+
+    float horInput;
+    float verInput;
+
+    Vector3 moveDir;
+
+    Rigidbody rb;
+
+    private void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        PlayerInput();
+        SpeedControl();
+    }
 
-        if (direction.magnitude >= 0.1f)
+    private void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
+    private void PlayerInput()
+    {
+        horInput = Input.GetAxisRaw("Horizontal");
+        verInput = Input.GetAxisRaw("Vertical");
+    }
+
+    private void MovePlayer()
+    {
+        moveDir = orientation.forward * verInput + orientation.right * horInput;
+
+        rb.AddForce(moveDir.normalized * moveSpeed * 10f, ForceMode.Force);
+    }
+
+    private void SpeedControl()
+    {
+        Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+
+        if (flatVel.magnitude > moveSpeed)
         {
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg - 90;
-            float angle = Mathf.SmoothDampAngle(playerModel.transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
-            playerModel.transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
-            rb.Move(direction * speed * Time.deltaTime);
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
+            rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
 }
