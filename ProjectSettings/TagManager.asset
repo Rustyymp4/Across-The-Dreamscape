@@ -3,7 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PuzzlePiece
+  - Statue
+  - VerifPuzzle
+  - Tile
+  - Puzzle2
+  - EmptyTile
+  - PickableTile
+  - Sunday
+  - Spawn
+  - En1
+  - En2
+  - En3
+  - Corridor
   layers:
   - Default
   - TransparentFX
@@ -11,7 +24,7 @@ TagManager:
   - Interactible
   - Water
   - UI
-  - 
+  - Complete Puzzle
   - 
   - 
   - 
