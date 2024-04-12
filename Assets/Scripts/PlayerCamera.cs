@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Playercamera : MonoBehaviour
@@ -20,6 +21,8 @@ public class Playercamera : MonoBehaviour
 
     TileInteract tileHit;
     SecondEnigma puzzle2Hit;
+    LastEnigma statueHit;
+    PuzzlePieceBehavior pieceHit;
 
     public LayerMask layerAim;
 
@@ -106,8 +109,22 @@ public class Playercamera : MonoBehaviour
                                 puzzle2Hit.PlayEnigma();
                             }
                         }
-
-
+                        else if (hitTag == "Statue")
+                        {
+                            statueHit = hit.collider.GetComponent<LastEnigma>();
+                            if (statueHit != null)
+                            {
+                                statueHit.activateRotation();
+                            }
+                        }
+                        else if (hitTag == "PuzzlePiece")
+                        {
+                            pieceHit = hit.collider.GetComponent<PuzzlePieceBehavior>();
+                            if (pieceHit != null)
+                            {
+                                pieceHit.Interact();
+                            }
+                        }
                     }
                 }
             }

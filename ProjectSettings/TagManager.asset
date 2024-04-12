@@ -12,6 +12,11 @@ TagManager:
   - EmptyTile
   - PickableTile
   - Sunday
+  - TriggerSpawn
+  - TriggerEn1
+  - TriggerEn2
+  - TriggerEn3
+  - TriggerCorridor
   layers:
   - Default
   - TransparentFX
