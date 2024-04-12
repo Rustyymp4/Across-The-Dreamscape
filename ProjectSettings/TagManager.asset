@@ -3,12 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tile
+  - Puzzle2
+  - EmptyTile
+  - PickableTile
+  - Sunday
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactible
   - Water
   - UI
   - 
