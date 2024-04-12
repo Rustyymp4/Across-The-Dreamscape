@@ -446,13 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfd39cf38973a24bac434495ef6704c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPuzzleStarted: 0
-  hasBeenCaught: 0
-  puzzlePiece: {fileID: 135915506}
-  doors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  isCollected: 0
 --- !u!1 &146480312
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +458,7 @@ GameObject:
   - component: {fileID: 146480313}
   - component: {fileID: 146480315}
   - component: {fileID: 146480314}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System Force Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5368,7 +5362,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 349533838}
+    m_TransformParent: {fileID: 1017524509}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -5388,7 +5382,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.4547267
+      value: -4.698533
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -5398,7 +5392,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.9857779
+      value: 10.125016
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -5457,6 +5451,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_TagString
+      value: PuzzlePiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089521754920373973, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8089521754920373973, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
       propertyPath: m_TagString
       value: PuzzlePiece
       objectReference: {fileID: 0}
@@ -5512,7 +5521,7 @@ GameObject:
   - component: {fileID: 266330550}
   - component: {fileID: 266330552}
   - component: {fileID: 266330551}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System Force Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10907,7 +10916,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1986146671}
   - {fileID: 641583759}
   - {fileID: 313071947}
   - {fileID: 1440959091}
@@ -10915,9 +10923,6 @@ Transform:
   - {fileID: 1328509409}
   - {fileID: 967820353}
   - {fileID: 965973151}
-  - {fileID: 135915507}
-  - {fileID: 1903314973}
-  - {fileID: 1609077655}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &355933058
@@ -11494,7 +11499,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525027395}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12901954, y: 0.00000001907653, z: -0.0000000024819897, w: 0.99164206}
+  m_LocalRotation: {x: 0.12901954, y: -0.000000019076534, z: 0.0000000024819902, w: 0.99164206}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -12303,7 +12308,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 349533838}
+    m_TransformParent: {fileID: 1017524509}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -12323,7 +12328,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.693
+      value: -8.936806
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -12333,7 +12338,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.06
+      value: 26.199238
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -12381,6 +12386,21 @@ PrefabInstance:
       value: ThirdPuzzlePiece
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_TagString
+      value: PuzzlePiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178923047286457805, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1178923047286457805, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_TagString
       value: PuzzlePiece
@@ -13132,6 +13152,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1986146671}
+  - {fileID: 135915507}
+  - {fileID: 1903314973}
+  - {fileID: 1609077655}
   - {fileID: 102810520}
   - {fileID: 355933059}
   - {fileID: 938376572}
@@ -14657,13 +14681,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1609077654}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.863727, y: 2.21, z: 10.903}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.1075325, y: 2.21, z: 19.042238}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1879608558}
-  m_Father: {fileID: 349533838}
+  m_Father: {fileID: 1017524509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1609077656
 MonoBehaviour:
@@ -14677,6 +14701,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5b92b350fa65cd418fd0dbdd80d46dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  door: {fileID: 1609077655}
+  doorOpening: 0
+  doorIsOpen: 0
+  puzzlePieces:
+  - {fileID: 1986146670}
+  - {fileID: 135915506}
+  - {fileID: 1903314971}
 --- !u!1 &1646689041
 GameObject:
   m_ObjectHideFlags: 0
@@ -15087,7 +15118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778700190}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12901954, y: 0.000000038153065, z: -0.000000004963979, w: 0.99164206}
+  m_LocalRotation: {x: 0.12901954, y: -0.00000003815307, z: 0.00000000496398, w: 0.99164206}
   m_LocalPosition: {x: 15.7425, y: -1.8275986, z: -18.928173}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15115,6 +15146,9 @@ MonoBehaviour:
   aimLookAt: {fileID: 52669742}
   DefaultCamera: {fileID: 1756281654}
   AimCamera: {fileID: 1457493751}
+  layerAim:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!114 &1778700193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15566,7 +15600,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 349533838}
+    m_TransformParent: {fileID: 1017524509}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -15586,7 +15620,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.865273
+      value: 13.621468
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -15596,7 +15630,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.544777
+      value: 26.684015
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
@@ -15664,6 +15698,21 @@ PrefabInstance:
       value: SecondPuzzlePiece
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_TagString
+      value: PuzzlePiece
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387527309317046928, guid: 1d0ceb29529a83e449db2532c4b3790e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8387527309317046928, guid: 1d0ceb29529a83e449db2532c4b3790e,
         type: 3}
       propertyPath: m_TagString
       value: PuzzlePiece
@@ -16230,13 +16279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfd39cf38973a24bac434495ef6704c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPuzzleStarted: 0
-  hasBeenCaught: 0
-  puzzlePiece: {fileID: 1903314971}
-  doors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  isCollected: 0
 --- !u!1 &1937391149
 GameObject:
   m_ObjectHideFlags: 0
@@ -16458,7 +16501,7 @@ GameObject:
   - component: {fileID: 1944936077}
   - component: {fileID: 1944936079}
   - component: {fileID: 1944936078}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particle System Force Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21442,13 +21485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfd39cf38973a24bac434495ef6704c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasPuzzleStarted: 1
-  hasBeenCaught: 0
-  puzzlePiece: {fileID: 1986146670}
-  doors:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  isCollected: 0
 --- !u!1 &1986766975
 GameObject:
   m_ObjectHideFlags: 0

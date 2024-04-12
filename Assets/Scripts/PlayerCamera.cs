@@ -19,6 +19,7 @@ public class Playercamera : MonoBehaviour
 
     TileInteract tileHit;
     LastEnigma statueHit;
+    PuzzlePieceBehavior pieceHit;
 
     public LayerMask layerAim;
 
@@ -73,6 +74,7 @@ public class Playercamera : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.E) && hit.collider.gameObject != null)
                 {
+                    Debug.Log(hit.collider.gameObject); 
                     string hitTag = hit.collider.gameObject.tag;
                     if (hitTag == "Tile")
                     {
@@ -88,6 +90,14 @@ public class Playercamera : MonoBehaviour
                         if (statueHit != null)
                         {
                             statueHit.activateRotation();
+                        }
+                    }
+                    else if (hitTag == "PuzzlePiece")
+                    {
+                        pieceHit = hit.collider.GetComponent<PuzzlePieceBehavior>();
+                        if (pieceHit != null)
+                        {
+                            pieceHit.Interact();
                         }
                     }
                 }
