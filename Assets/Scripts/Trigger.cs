@@ -9,10 +9,6 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (ScriptTarget.tag == "Sunday")
-        {
-            ScriptTarget.SetActive(true);
             ScriptTarget.GetComponent<SundayScript>().Enigma2();
-        }
     }
 }
