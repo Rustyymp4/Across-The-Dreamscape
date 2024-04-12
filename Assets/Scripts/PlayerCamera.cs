@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Playercamera : MonoBehaviour
@@ -73,7 +70,6 @@ public class Playercamera : MonoBehaviour
             }
 
             SwitchCam();
-    }
 
             Debug.DrawRay(AimCamera.transform.position, DefaultCamera.transform.rotation * transform.forward * 10, Color.green);
 
@@ -91,7 +87,6 @@ public class Playercamera : MonoBehaviour
                             {
                                 tileHit.PickUp();
                             }
-
                         }
                         else if (hitTag == "EmptyTile")
                         {
@@ -123,7 +118,6 @@ public class Playercamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
         }
-        */
     }
 
 
